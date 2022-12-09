@@ -6,24 +6,26 @@
 // fetch
 // axios
 import { useState, useEffect } from "react";
-const Products = () => {
+import axios from "axios";
+const FetchData = () => {
   const [data, setData] = useState([]);
   console.log(data);
 
   const url = "https://fakestoreapi.com/products/";
   const getData = async () => {
-    const response = await fetch(url);
-    const result = response.json();
-    result.then((res) => setData(res));
-    // result.then((res) => console.log(res)).catch((err) => console.log(err));
+    const response = await axios.get(url);
+    // const result = response.data;
+    // setData(result);
+    setData(response.data);
+    // const result = response.json();
+    // return response.data;
+    // result.then((res) => setData(res));
   };
   // getData(); // infinte loop
   // useEffect - side effect
-  // life cycle hooks
-  // compountDidMount()
   useEffect(() => {
     getData();
-  }, []); // dependencies
+  }, []);
   return (
     <div className="card">
       {data.map((item) => (
@@ -40,4 +42,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default FetchData;

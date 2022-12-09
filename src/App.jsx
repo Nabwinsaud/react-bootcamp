@@ -1,5 +1,8 @@
 // rafce
 import { useState } from "react";
+import FetchData from "./FetchData";
+import Home from "./Home";
+import Quotes from "./pages/Quotes";
 import Products from "./Products";
 // let count = 0;
 // function increment() {
@@ -11,6 +14,7 @@ import Products from "./Products";
 // hooks are normal function
 // hoook should be inside the main func
 //
+
 function App() {
   const [count, setCount] = useState(0);
   const [username, setUsername] = useState("");
@@ -27,9 +31,9 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Day 4</h1>
-      <p>{count}</p>
-      <button onClick={increment}>count</button>
+      {/* <h1>Day 4</h1> */}
+      {/* <p>{count}</p> */}
+      {/* <button onClick={increment}>count</button> */}
       {/* <button onClick={() => setCount(count + 1)}>count</button> */}
       {/* <input
         type="text"
@@ -38,14 +42,17 @@ function App() {
         onChange={(e) => setUsername(e.target.value)}
       /> */}
 
-      {username}
+      {/* {username}
       <input
         type="text"
         placeholder="username"
         value={username}
         onChange={handleChange}
-      />
-      <Products />
+      /> */}
+      {/* <Products /> */}
+      {/* <Home /> */}
+      {/* <FetchData /> */}
+      <Quotes />
     </div>
   );
 }
